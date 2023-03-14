@@ -1,0 +1,287 @@
+:root {
+  --color--b-1: #ffb545;
+  --color--b--2: #00c46a;
+  --color--d--1: #2d3439;
+  --color--d--2: #42484d;
+  --color--l--1: #aaa;
+  --color--l--2: #ececec;
+  --color--l--3: rgb(214, 222, 224);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+@font-face {
+  font-family: "byekan";
+  src: url("fonts/BYekan.ttf");
+}
+body {
+  font-family: "byekan";
+  font-size: 1rem;
+  color: var(--color--l--2);
+  background-color: var(--color--d--1);
+  /* background-color: #037b43; */
+  display: flex;
+  padding: 2.5rem;
+  overscroll-behavior-y: none;
+  font-weight: 500;
+  line-height: 1.8;
+  height: 100%;
+  user-select: none;
+}
+a:link,
+a:visited {
+  color: var(--color--b-1);
+}
+.right__box {
+  float: right;
+}
+.sidebar {
+  flex-basis: 36%;
+  background-color: var(--color--d--2);
+  padding: 3rem 5rem 4rem 5rem;
+  display: flex;
+  height: 95.7vh;
+  width: 10rem;
+  /* background-color: #2e0202; */
+  flex-direction: column;
+}
+.logo {
+  height: 6rem;
+  align-self: center;
+  margin-bottom: 9rem;
+  width: 30%;
+  height: 7%;
+}
+.map__app--workout {
+  list-style: none;
+  height: 70vh;
+  /* width: 30vh; */
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+.map__app--workout::-webkit-scrollbar {
+  width: 0;
+}
+.workout {
+  /*width: 300px;*/
+  /*height: 100px;*/
+  background-color: var(--color--d--1);
+  border-radius: 10px;
+  padding: 1rem 2rem;
+  margin-bottom: 1.7rem;
+  display: grid;
+  cursor: pointer;
+  grid-template-columns: 0.5fr 0.5fr 0.5fr 0.5fr;
+  gap: 0.75rem 1.5rem;
+}
+.workout__running {
+  border-radius: 5px;
+  margin-top: 10px;
+  border-right: 7px solid dodgerblue;
+  width: 90%;
+  margin-right: 5%;
+  /* border-left: 6px solid var(--color--b--2); */
+  display: grid;
+}
+.workout__cycling {
+  width: 90%;
+  margin-right: 5%;
+  border-radius: 5px;
+  /*width: 98%;*/
+  display: grid;
+  margin-top: 10px;
+  border-right: 7px solid orangered;
+  /* border-left: 6px solid var(--color--b-1); */
+}
+.workout:hover {
+  cursor: pointer;
+  background-color: rgba(12, 12, 12, 0.82);
+  transition: 0.9s ease-out;
+}
+.workout__title {
+  font-size: 1.7rem;
+  font-weight: 600;
+  grid-column: 1/-1;
+}
+.workout__details {
+  display: flex;
+  align-items: baseline;
+}
+.workout__icon {
+  font-size: 2.2rem;
+  margin-top: 1rem;
+  height: 0.28rem;
+}
+.workout__value {
+  font-size: 1.9rem;
+  margin-top: 0.2rem;
+  height: 0.3rem;
+  margin-right: 5px;
+}
+.workout__unit {
+  font-size: 1rem;
+  color: rgb(217, 215, 215);
+  text-transform: lowercase;
+  font-weight: 700;
+  padding-right: 1px;
+}
+.form {
+  background-color: var(--color--d--1);
+  border-radius: 5px;
+  padding: 1.5rem 2.25rem;
+  margin-bottom: 1.75rem;
+  color: var(--color--l--2);
+  /* display: grid; */
+  display: grid;
+  /* height: 20rem; */
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem 2.5rem;
+  height: 17rem;
+  width: 98%;
+  transition: all 0.5s, transform 1ms;
+}
+.form__row--hidden {
+  display: none;
+}
+/*.form__hidden {*/
+/*  transform: translateY(-30rem);*/
+/*  height: 0;*/
+/*  padding: 0 2.25rem;*/
+/*  margin-bottom: 0;*/
+/*  opacity: 0;*/
+/*}*/
+
+.form__row {
+  display: flex;
+  align-items: center;
+}
+.form__row--hidden {
+  display: none;
+}
+.form__label {
+  flex: 0 0 30%;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.select__element {
+  width: 100%;
+  height: 3vh;
+  color: #2d3439;
+  font-family: "byekan";
+  border: none;
+  border-radius: 5px;
+  background-color: var(--color--l--2);
+  transition: all 0.5s;
+  text-align: center;
+  justify-content: center;
+}
+.select__element:focus {
+  outline: none;
+  padding-right: 2px;
+  border: 2px solid #aaa;
+  background-color: #fff;
+}
+
+.form__button {
+  width: 80px;
+  height: 40px;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--color--b--2);
+  color: var(--color--l--2);
+  font-weight: 600;
+  font-size: 1.7rem;
+  font-family: "byekan";
+  cursor: pointer;
+  justify-content: center;
+  text-align: center;
+  justify-items: center;
+}
+.form__button:hover {
+  background-color: #049a54;
+  transition: 0.5s ease-in-out;
+}
+.form__button--hidden {
+  display: none;
+}
+#map {
+  /* flex: 1; */
+  /* width: 100%; */
+  flex-basis: 100%;
+  height: 95.5vh;
+  /* background-color: var(--color--l--1); */
+  background-color: rgb(168, 166, 164);
+}
+
+.form__hidden {
+  display: none;
+}
+/*.workout__running--hidden {*/
+/*  display: none;*/
+/*}*/
+/*.workout__cycling--hidden {*/
+/*  display: none;*/
+/*}*/
+
+.leaflet-popup .leaflet-popup-content-wrapper {
+  background-color: black;
+  color: white;
+  border-radius: 5px;
+  padding-right: 0.6rem;
+}
+
+.leaflet-popup .leaflet-popup-content {
+  font-size: 1.5rem;
+}
+
+.leaflet-popup .leaflet-popup-tip {
+  background-color: black;
+}
+
+.running-popup .leaflet-popup-content-wrapper {
+  border-right: 7px solid dodgerblue;
+  background-color: rgb(19, 18, 18);
+  width: 250px;
+  height: 50px;
+  font-family: "byekan";
+}
+.cycling-popup .leaflet-popup-content-wrapper {
+  border-right: 7px solid orangered;
+  background-color: rgb(19, 18, 18);
+  width: 250px;
+  height: 50;
+  font-family: "byekan";
+}
+.form_button {
+  width: 98px;
+  height: 45px;
+  background-color: #18ab50;
+  border: none;
+  outline: none;
+  color: white;
+  border-radius: 7px;
+  font-size: 16px;
+  font-family: "byekan";
+}
+.form_button:hover {
+  cursor: pointer;
+  transition: 0.6s ease;
+  background-color: #038249;
+}
+.form_button:active {
+  margin-top: 4px;
+}
+.scrollbar {
+  height: 50rem;
+  overflow: scroll;
+  background-color: #1d2123;
+  color: #fff;
+  width: 100%;
+}

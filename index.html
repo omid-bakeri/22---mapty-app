@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>مپ آپ</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <link rel="shortcut icon" href="image/map.png" type="image/x-icon" />
+
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+      integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+      crossorigin=""
+    />
+    <script
+      defer
+      src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+      integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+      crossorigin=""
+    ></script>
+  </head>
+  <body>
+    <div class="sidebar">
+      <img class="logo" src="image/logo.png" alt="مپ آپ" />
+      <ul class="map__app--workout">
+        <form class="form form__hidden" action="#">
+          <div class="form__row">
+            <label class="form__label">نوع</label>
+            <select class="select__element select__input--type">
+              <option class="running" value="running">دویدن</option>
+              <option class="cycling" value="cycling">دوچرحه سواری</option>
+            </select>
+          </div>
+          <div class="form__row">
+            <label class="form__label">مسافت</label>
+            <input
+              class="select__element select__element--distance"
+              placeholder="کیلو متر"
+            />
+          </div>
+          <div class="form__row">
+            <label class="form__label">زمان</label>
+            <input
+              class="select__element select__element--duration"
+              placeholder="دقیقه"
+            />
+          </div>
+          <div class="form__row form_row_cadence_hidden">
+            <label class="form__label form_label_cadence_hidden">ریتم</label>
+            <input
+              class="select__element select__element--cadence"
+              placeholder="قدم / دقیقه"
+            />
+          </div>
+          <div class="form__row form__row--hidden form_row_elevation_hidden">
+            <label class="form__label">ارتفاع</label>
+            <input
+              class="select__element select__element--elevation"
+              placeholder="متر"
+            />
+          </div>
+          <!--          <button class="form__button&#45;&#45;hidden">تایید</button>-->
+          <button class="form_button form__hidden">تایید</button>
+        </form>
+
+        <!--        <div class="scrollbar">-->
+        <!--                  <li-->
+        <!--          class="workout workout__running workout__running&#45;&#45;hidden"-->
+        <!--          data-id="1234567890"-->
+        <!--        >-->
+        <!--           <h2 class="workout__title">دویدن  </h2>-->
+        <!--                    <div class="workout__details">-->
+        <!--                      <span class="workout__icon">🏃‍♂️</span>-->
+        <!--                      <span class="workout__value distance-value"></span>-->
+        <!--                      <span class="workout__unit">کیومتر</span>-->
+        <!--                    </div>-->
+        <!--                    <div class="workout__details">-->
+        <!--                      <span class="workout__icon">⏱</span>-->
+        <!--                      <span class="workout__value duration-value"></span>-->
+        <!--                      <span class="workout__unit">دقیقه</span>-->
+        <!--                    </div>-->
+        <!--                    <div class="workout__details">-->
+        <!--                      <span class="workout__icon">⚡️</span>-->
+        <!--                      <span class="workout__value cadence-value"></span>-->
+        <!--                      <span class="workout__unit">km/min</span>-->
+        <!--                    </div>-->
+        <!--                    <div class="workout__details">-->
+        <!--                      <span class="workout__icon">🦶</span>-->
+        <!--                      <span class="workout__value">90</span>-->
+        <!--                      <span class="workout__unit">spm</span>-->
+        <!--                    </div>-->
+        <!--        </li>-->
+        <!--        <li-->
+        <!--          class="workout workout__cycling workout__cycling&#45;&#45;hidden"-->
+        <!--          data-id="1234567891"-->
+        <!--        >-->
+        <!--                    <h2 class="workout__title">دوچرخه سواری  </h2>-->
+        <!--                    <div class="workout__details">-->
+        <!--                      <span class="workout__icon">🚴‍♀️</span>-->
+        <!--                      <span class="workout__value"></span>-->
+        <!--                      <span class="workout__unit">کیومتر</span>-->
+        <!--                    </div>-->
+        <!--                    <div class="workout__details">-->
+        <!--                      <span class="workout__icon">⏱</span>-->
+        <!--                      <span class="workout__value"></span>-->
+        <!--                      <span class="workout__unit">دقیقه</span>-->
+        <!--                    </div>-->
+        <!--                    <div class="workout__details">-->
+        <!--                      <span class="workout__icon">⚡️</span>-->
+        <!--                      <span class="workout__value"></span>-->
+        <!--                      <span class="workout__unit">km/min</span>-->
+        <!--                    </div>-->
+        <!--                    <div class="workout__details">-->
+        <!--                      <span class="workout__icon">⛰</span>-->
+        <!--                      <span class="workout__value"></span>-->
+        <!--                      <span class="workout__unit">spm</span>-->
+        <!--                    </div>-->
+        <!--        </li>-->
+        <!--        </div>-->
+        <!-- results -->
+      </ul>
+    </div>
+    <div id="map"></div>
+    <script src="script.js"></script>
+  </body>
+</html>
